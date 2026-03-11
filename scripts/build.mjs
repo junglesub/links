@@ -310,11 +310,16 @@ function resolveLanguageState(site) {
     : [];
   const languages = configured.length > 0 ? configured : ["ko"];
   const fallbackLanguage = languages.includes("en") ? "en" : languages[0];
-  return { languages, fallbackLanguage };
+  const normalizedDefaultLanguage = normalizeLanguage(site.defaultLanguage);
+  const prerenderLanguage =
+    normalizedDefaultLanguage !== "auto" && languages.includes(normalizedDefaultLanguage)
+      ? normalizedDefaultLanguage
+      : fallbackLanguage;
+  return { languages, fallbackLanguage, prerenderLanguage };
 }
 
 function buildOgImageSvg(data) {
-  const language = data.fallbackLanguage;
+  const language = data.prerenderLanguage;
   const name = pickLocalized(data.site.person.name, language, data.fallbackLanguage);
   const role = pickLocalized(data.site.person.role, language, data.fallbackLanguage);
   const intro = pickLocalized(data.site.intro, language, data.fallbackLanguage);
@@ -818,6 +823,15 @@ const state = {
   requestedLanguage: null
 };
 
+function escapeHtml(value = "") {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function getStored(key) {
   try {
     return localStorage.getItem(key);
@@ -929,7 +943,7 @@ function localeSuffix(field, language) {
 
 function renderIcon(link) {
   if (link.icon?.kind === "image") {
-    return '<img alt="" src="' + link.icon.value + '" loading="lazy" referrerpolicy="no-referrer">';
+    return '<img alt="" src="' + escapeHtml(link.icon.value) + '" loading="lazy" referrerpolicy="no-referrer">';
   }
   const key = link.icon?.value || "globe";
   return ICONS[key] || ICONS.globe;
@@ -1002,26 +1016,27 @@ function render() {
   document.getElementById("person-location").textContent = pickLocalized(DATA.site.person.location, language);
   document.getElementById("person-email").textContent = pickLocalized(DATA.site.person.email, language);
   document.getElementById("person-skills").innerHTML = (DATA.site.skills || [])
-    .map((skill) => \`<span class="identity-skill">\${skill}</span>\`)
+    .map((skill) => \`<span class="identity-skill">\${escapeHtml(skill)}</span>\`)
     .join("");
   renderLanguageButtons();
   renderThemeButtons();
 
   const linksEl = document.getElementById("links");
   linksEl.innerHTML = DATA.links.map((link, index) => {
-    const name = (pickLocalized(link.name, language) || link.metadataName || link.fallbackName) + getLocaleSuffix(link.url, language);
-    const description = pickDescription(link, language, DATA.fallbackLanguage);
+    const name = escapeHtml((pickLocalized(link.name, language) || link.metadataName || link.fallbackName) + getLocaleSuffix(link.url, language));
+    const description = escapeHtml(pickDescription(link, language, DATA.fallbackLanguage));
     const href = pickLocalized(link.url, language);
-    const displayUrl = pickLocalized(link.displayUrl, language);
+    const escapedHref = escapeHtml(href);
+    const displayUrl = escapeHtml(pickLocalized(link.displayUrl, language));
 
     return \`<article class="link-card" style="animation-delay:\${index * 60}ms">
-      <a class="link-icon\${link.icon?.plain ? " plain" : ""}" href="\${href}" target="_blank" rel="noreferrer noopener">\${renderIcon(link)}</a>
-      <a class="link-main" href="\${href}" target="_blank" rel="noreferrer noopener">
+      <a class="link-icon\${link.icon?.plain ? " plain" : ""}" href="\${escapedHref}" target="_blank" rel="noreferrer noopener">\${renderIcon(link)}</a>
+      <a class="link-main" href="\${escapedHref}" target="_blank" rel="noreferrer noopener">
         <div class="link-name">\${name}</div>
         <div class="link-url">\${displayUrl}</div>
         \${description ? \`<div class="link-description">\${description}</div>\` : ""}
       </a>
-      <button class="link-copy" type="button" data-copy="\${href}" aria-label="\${messages.copy}" title="\${messages.copy}">\${ICONS.copy}</button>
+      <button class="link-copy" type="button" data-copy="\${escapedHref}" aria-label="\${escapeHtml(messages.copy)}" title="\${escapeHtml(messages.copy)}">\${ICONS.copy}</button>
     </article>\`;
   }).join("");
 
@@ -1095,7 +1110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 
 function buildHtml(data) {
-  const language = data.fallbackLanguage;
+  const language = data.prerenderLanguage;
   const messages = uiMessages[language];
   const title = pickLocalized(data.site.title, language, data.fallbackLanguage);
   const description = pickLocalized(data.site.intro, language, data.fallbackLanguage);
@@ -1112,7 +1127,7 @@ function buildHtml(data) {
     address: pickLocalized(data.site.person.location, language, data.fallbackLanguage),
     url: pageUrl || undefined,
     sameAs: data.links
-      .map((link) => resolveLocalizedUrl(link.url, data.fallbackLanguage))
+      .map((link) => resolveLocalizedUrl(link.url, language))
       .filter((url) => /^https?:/i.test(url))
   };
   const structuredDataJson = JSON.stringify(structuredData).replace(/</g, "\\u003C");
@@ -1228,7 +1243,7 @@ async function main() {
   const raw = await fs.readFile(contentPath, "utf8");
   const parsed = YAML.parse(raw);
   const { site, links } = parsed;
-  const { languages, fallbackLanguage } = resolveLanguageState(site);
+  const { languages, fallbackLanguage, prerenderLanguage } = resolveLanguageState(site);
 
   const builtLinks = [];
   for (const link of links) {
@@ -1261,6 +1276,7 @@ async function main() {
     links: builtLinks,
     languages,
     fallbackLanguage,
+    prerenderLanguage,
     siteUrl: typeof site.url === "string" ? site.url : "",
     defaultLanguage: normalizeLanguage(site.defaultLanguage) || "auto",
     defaultTheme: ["system", "light", "dark"].includes(site.theme?.defaultMode) ? site.theme.defaultMode : "system"
