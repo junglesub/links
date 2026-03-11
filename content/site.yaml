@@ -47,8 +47,10 @@ links:
 
   - url:
       ko: "https://github.com/junglesub"
+      en: "https://github.com/junglesub/junglesub/blob/master/ENGLISH.md"
     name:
       ko: "GitHub"
+      en: "GitHub"
     description: ""
 
   - url:
