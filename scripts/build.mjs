@@ -602,10 +602,10 @@ body[data-ready="true"] .page {
   overflow: hidden;
   display: grid;
   padding: 16px 24px;
-  background: var(--surface-strong);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(18px);
 }
 
