@@ -4,8 +4,8 @@ site:
     ko: "유정섭 | 커리어 링크"
     en: "Jung Sub Ryoo | Career Links"
   intro:
-    ko: "프로필, 기술 스택, 연락처와 주요 링크를 한 곳에서 빠르게 확인할 수 있도록 정리했습니다."
-    en: "A concise profile hub with my experience, engineering stack, and contact points."
+    ko: "프로필, 기술 스택, 연락처와 주요 링크를 한눈에 확인할 수 있도록 정리했습니다."
+    en: "A profile hub that brings together my experience, tech stack, and contact links in one place."
   person:
     name:
       ko: "유정섭"
@@ -54,7 +54,7 @@ links:
   - url:
       ko: "https://compfriend.tistory.com/"
     name:
-      ko: "Blog"
+      ko: "컴돌이의 컴퓨터 이야기"
       en: "Blog"
     description:
       ko: "기술 기록과 학습 정리"
