@@ -405,6 +405,17 @@ function buildCss() {
 
 html[data-theme="light"] {
   color-scheme: light;
+  --bg: #edf1f7;
+  --bg-accent: rgba(44, 61, 104, 0.16);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --text: #0f172a;
+  --muted: #5b6780;
+  --line: rgba(15, 23, 42, 0.08);
+  --accent: #1e3a5f;
+  --accent-strong: #132845;
+  --accent-soft: rgba(30, 58, 95, 0.1);
+  --shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
 }
 
 html[data-theme="dark"] {
