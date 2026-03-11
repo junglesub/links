@@ -1,0 +1,70 @@
+site:
+  url: "https://junglesub.github.io/card/"
+  title:
+    ko: "유정섭 | 커리어 링크"
+    en: "Jung Sub Ryoo | Career Links"
+  intro:
+    ko: "프로필, 기술 스택, 연락처와 주요 링크를 한 곳에서 빠르게 확인할 수 있도록 정리했습니다."
+    en: "A concise profile hub with my experience, engineering stack, and contact points."
+  person:
+    name:
+      ko: "유정섭"
+      en: "Jung Sub Ryoo"
+    role:
+      ko: "Full-Stack Software Engineer"
+      en: "Full-Stack Software Engineer"
+    location:
+      ko: "Seoul, South Korea"
+      en: "Seoul, South Korea"
+    email:
+      ko: "junglesubmarine@gmail.com"
+      en: "junglesubmarine@gmail.com"
+  defaultLanguage: auto
+  availableLanguages:
+    - ko
+    - en
+  theme:
+    defaultMode: dark
+  skills:
+    - ReactJS
+    - HTML/CSS
+    - Spring
+    - NestJS
+    - MySQL
+    - NoSQL
+    - AWS
+    - GCP
+    - Linux
+
+links:
+  - url:
+      ko: "https://www.linkedin.com/in/jungsubr/"
+      en: "https://www.linkedin.com/in/jungsubr/?locale=en_US"
+    name:
+      ko: "LinkedIn"
+      en: "LinkedIn"
+
+  - url:
+      ko: "https://github.com/junglesub"
+    name:
+      ko: "GitHub"
+
+  - url:
+      ko: "https://compfriend.tistory.com/"
+    name:
+      ko: "Blog"
+      en: "Blog"
+    description:
+      ko: "기술 기록과 학습 정리"
+      en: "Technical notes, project write-ups, and learning logs"
+
+  - url:
+      ko: "mailto:junglesubmarine@gmail.com"
+      en: "mailto:junglesubmarine@gmail.com"
+    name:
+      ko: "이메일"
+      en: "Email"
+    description:
+      ko: "협업, 제안, 문의 연락"
+      en: "For collaboration, opportunities, and inquiries"
+    icon: mail

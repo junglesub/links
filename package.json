@@ -1,0 +1,12 @@
+{
+  "name": "professional-card-pages",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "sharp": "^0.34.5",
+    "yaml": "^2.8.1"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  }
+}
