@@ -17,6 +17,7 @@ const iconSvg = {
   mail: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2 .47v.03l6.62 4.73a.66.66 0 0 0 .76 0L19 7.25v-.03a.75.75 0 0 0-.75-.72H5.75A.75.75 0 0 0 5 7.22Zm14 2.49-5.46 3.9a2.66 2.66 0 0 1-3.08 0L5 9.71v7.54c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V9.71Z" fill="currentColor"/></svg>`,
   file: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.75A2.75 2.75 0 0 1 8.75 0h5.69c.73 0 1.43.29 1.94.8l4.82 4.82c.51.51.8 1.21.8 1.94v13.69A2.75 2.75 0 0 1 19.25 24H8.75A2.75 2.75 0 0 1 6 21.25V2.75Zm8 0V6h3.25L14 2.75ZM9 11.25c0-.41.34-.75.75-.75h4.5a.75.75 0 1 1 0 1.5h-4.5A.75.75 0 0 1 9 11.25Zm0 4c0-.41.34-.75.75-.75h7.5a.75.75 0 1 1 0 1.5h-7.5A.75.75 0 0 1 9 15.25Z" fill="currentColor"/></svg>`,
   copy: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.75 3A2.75 2.75 0 0 0 6 5.75v9.5A2.75 2.75 0 0 0 8.75 18h7.5A2.75 2.75 0 0 0 19 15.25v-9.5A2.75 2.75 0 0 0 16.25 3h-7.5Zm-4 5A2.75 2.75 0 0 0 2 10.75v9.5A2.75 2.75 0 0 0 4.75 23h7.5A2.75 2.75 0 0 0 15 20.25V20h-1.5v.25a1.25 1.25 0 0 1-1.25 1.25h-7.5A1.25 1.25 0 0 1 3.5 20.25v-9.5A1.25 1.25 0 0 1 4.75 9.5H5V8h-.25Z" fill="currentColor"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.55 17.2 4.9 12.55l1.4-1.4 3.25 3.24 8.15-8.14 1.4 1.4-9.55 9.55Z" fill="currentColor"/></svg>`,
   share: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.08a3.2 3.2 0 0 0-2.53 1.23l-5.78-3.2a3.31 3.31 0 0 0 0-1.22l5.78-3.2A3.2 3.2 0 1 0 14.8 8a3.1 3.1 0 0 0 .06.59l-5.8 3.2a3.2 3.2 0 1 0 0 4.42l5.8 3.2A3.1 3.1 0 0 0 14.8 20A3.2 3.2 0 1 0 18 16.08Z" fill="currentColor"/></svg>`,
   sun: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a1 1 0 0 1 1 1v1.25a1 1 0 1 1-2 0V5a1 1 0 0 1 1-1Zm0 12.75a1 1 0 0 1 1 1V19a1 1 0 1 1-2 0v-1.25a1 1 0 0 1 1-1Zm8-4.75a1 1 0 1 1 0 2h-1.25a1 1 0 1 1 0-2H20ZM6.25 12a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2h1.25Zm9.41-4.66a1 1 0 0 1 1.41 0l.88.88a1 1 0 1 1-1.41 1.41l-.88-.88a1 1 0 0 1 0-1.41Zm-9.61 9.61a1 1 0 0 1 1.41 0l.88.88a1 1 0 1 1-1.41 1.41l-.88-.88a1 1 0 0 1 0-1.41Zm11.02.88a1 1 0 0 1 0-1.41l.88-.88a1 1 0 1 1 1.41 1.41l-.88.88a1 1 0 0 1-1.41 0ZM7.34 7.34a1 1 0 0 1 0 1.41l-.88.88A1 1 0 0 1 5.05 8.22l.88-.88a1 1 0 0 1 1.41 0ZM12 8a4 4 0 1 1 0 8a4 4 0 0 1 0-8Z" fill="currentColor"/></svg>`,
   moon: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.77 4.58a1 1 0 0 1 .19 1.08a6.98 6.98 0 0 0 8.43 9.38a1 1 0 0 1 1.13 1.43A10 10 0 1 1 13.3 3.45a1 1 0 0 1 1.47 1.13Z" fill="currentColor"/></svg>`
@@ -25,7 +26,7 @@ const iconSvg = {
 const uiMessages = {
   ko: {
     open: "열기",
-    copied: "복사됨",
+    copied: "링크가 클립보드에 복사되었습니다.",
     copy: "링크 복사",
     share: "공유",
     shareLink: "페이지 공유",
@@ -42,7 +43,7 @@ const uiMessages = {
   },
   en: {
     open: "Open",
-    copied: "Copied",
+    copied: "Link copied to your clipboard.",
     copy: "Copy link",
     share: "Share",
     shareLink: "Share page",
@@ -159,8 +160,10 @@ function getLocaleAvailability(field) {
 }
 
 function pickDescription(link, language, fallbackLanguage) {
+  if (link.descriptionConfigured) {
+    return pickLocalized(link.description, language, fallbackLanguage) || "";
+  }
   return (
-    pickLocalized(link.description, language, fallbackLanguage) ||
     pickLocalized(link.metadataDescription, language, fallbackLanguage) ||
     pickLocalized(link.fallbackDescription, language, fallbackLanguage) ||
     ""
@@ -376,7 +379,7 @@ function buildCss() {
   --accent: #1e3a5f;
   --accent-strong: #132845;
   --accent-soft: rgba(30, 58, 95, 0.1);
-  --shadow: 0 26px 70px rgba(15, 23, 42, 0.14);
+  --shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
   --radius-xl: 24px;
   --radius-lg: 18px;
   --radius-md: 16px;
@@ -396,7 +399,7 @@ function buildCss() {
     --accent: #88a7ff;
     --accent-strong: #c6d5ff;
     --accent-soft: rgba(136, 167, 255, 0.12);
-    --shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+    --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
   }
 }
 
@@ -416,16 +419,27 @@ html[data-theme="dark"] {
   --accent: #88a7ff;
   --accent-strong: #c6d5ff;
   --accent-soft: rgba(136, 167, 255, 0.12);
-  --shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+  --shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
 html, body {
   margin: 0;
   min-height: 100%;
+}
+
+html {
+  background-color: var(--bg);
 }
 
 body {
@@ -435,6 +449,10 @@ body {
     radial-gradient(circle at top left, var(--bg-accent), transparent 30%),
     radial-gradient(circle at right 18%, rgba(105, 124, 201, 0.14), transparent 24%),
     linear-gradient(180deg, color-mix(in srgb, var(--bg) 92%, #ffffff 8%) 0%, var(--bg) 100%);
+}
+
+body[data-ready="false"] {
+  overflow: hidden;
 }
 
 a {
@@ -450,6 +468,59 @@ button, select {
   width: min(100%, var(--max-width));
   margin: 0 auto;
   padding: 24px 18px 56px;
+}
+
+body[data-ready="false"] .page {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+body[data-ready="true"] .page {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top left, var(--bg-accent), transparent 30%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg) 94%, #ffffff 6%) 0%, var(--bg) 100%);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.boot[data-visible="false"] {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.boot-panel {
+  display: grid;
+  justify-items: center;
+  padding: 8px;
+}
+
+.boot-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 2px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  border-top-color: var(--accent);
+  animation: boot-spin 0.9s linear infinite;
+}
+
+@keyframes boot-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .toolbar {
@@ -593,6 +664,47 @@ button, select {
 
 .notice[data-visible="true"] {
   display: block;
+}
+
+.toast {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transform: translate(-50%, -12px);
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, #3fa56f 45%, var(--line));
+  background: color-mix(in srgb, #e8f8ef 76%, var(--surface));
+  color: #0f5a35;
+  box-shadow: 0 8px 18px rgba(11, 72, 43, 0.12);
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.toast svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.toast[data-visible="true"] {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+html[data-theme="dark"] .toast {
+  border-color: rgba(86, 190, 128, 0.42);
+  background: linear-gradient(180deg, rgba(16, 52, 33, 0.96), rgba(13, 42, 27, 0.96));
+  color: #dff7e6;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
 }
 
 .links {
@@ -820,7 +932,9 @@ const ICONS = ${JSON.stringify(iconSvg)};
 const state = {
   theme: "system",
   language: "ko",
-  requestedLanguage: null
+  requestedLanguage: null,
+  toastTimer: null,
+  bootStartedAt: performance.now()
 };
 
 function escapeHtml(value = "") {
@@ -883,6 +997,25 @@ function getEffectiveTheme() {
   return state.theme === "system" ? getSystemTheme() : state.theme;
 }
 
+function updateThemeColor() {
+  const meta = document.querySelector('meta[name="theme-color"][data-dynamic-theme]');
+  if (!meta) {
+    return;
+  }
+  meta.setAttribute("content", getEffectiveTheme() === "dark" ? "#06101f" : "#edf1f7");
+}
+
+function withoutThemeMotion(callback) {
+  const root = document.documentElement;
+  root.classList.add("theme-switching");
+  callback();
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      root.classList.remove("theme-switching");
+    });
+  });
+}
+
 function stripTrailingSlash(value) {
   return typeof value === "string" && value.endsWith("/") ? value.slice(0, -1) : value;
 }
@@ -911,8 +1044,10 @@ function getLocaleAvailability(field) {
 }
 
 function pickDescription(link, language, fallbackLanguage) {
+  if (link.descriptionConfigured) {
+    return pickLocalized(link.description, language, fallbackLanguage) || "";
+  }
   return (
-    pickLocalized(link.description, language, fallbackLanguage) ||
     pickLocalized(link.metadataDescription, language, fallbackLanguage) ||
     pickLocalized(link.fallbackDescription, language, fallbackLanguage) ||
     ""
@@ -951,6 +1086,7 @@ function renderIcon(link) {
 
 function applyTheme() {
   document.documentElement.dataset.theme = getEffectiveTheme();
+  updateThemeColor();
 }
 
 function renderThemeButtons() {
@@ -1000,6 +1136,30 @@ function renderFooter(language) {
   shareButton.setAttribute("aria-label", messages.shareLink);
   shareButton.setAttribute("title", messages.shareLink);
   shareButton.querySelector(".footer-share-text").textContent = messages.share;
+}
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) {
+    return;
+  }
+
+  toast.innerHTML = ICONS.check + '<span>' + escapeHtml(message) + '</span>';
+  toast.dataset.visible = "true";
+  clearTimeout(state.toastTimer);
+  state.toastTimer = setTimeout(() => {
+    toast.dataset.visible = "false";
+  }, 1600);
+}
+
+function finishBoot() {
+  const boot = document.getElementById("boot");
+  document.documentElement.style.removeProperty("background-color");
+  document.documentElement.style.removeProperty("color-scheme");
+  document.body.dataset.ready = "true";
+  if (boot) {
+    boot.dataset.visible = "false";
+  }
 }
 
 function render() {
@@ -1058,21 +1218,19 @@ document.addEventListener("click", async (event) => {
   if (themeButton) {
     state.theme = themeButton.dataset.themeMode;
     setStored("card-theme", state.theme);
-    applyTheme();
-    renderThemeButtons();
+    withoutThemeMotion(() => {
+      applyTheme();
+      renderThemeButtons();
+    });
     return;
   }
 
   const button = event.target.closest("[data-copy]");
   if (button) {
+    const messages = MESSAGES[state.language];
     try {
       await navigator.clipboard.writeText(button.dataset.copy);
-      button.innerHTML = ICONS.copy;
-      button.dataset.copied = "true";
-      setTimeout(() => {
-        button.innerHTML = ICONS.copy;
-        button.dataset.copied = "false";
-      }, 1400);
+      showToast(messages.copied);
     } catch {}
     return;
   }
@@ -1089,6 +1247,7 @@ document.addEventListener("click", async (event) => {
       await navigator.share({ title, url: shareUrl });
     } else {
       await navigator.clipboard.writeText(shareUrl);
+      showToast(MESSAGES[state.language].copied);
     }
   } catch {}
 });
@@ -1099,11 +1258,19 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTheme();
   render();
 
+  const elapsed = performance.now() - state.bootStartedAt;
+  const remaining = Math.max(500 - elapsed, 0);
+  setTimeout(() => {
+    finishBoot();
+  }, remaining);
+
   const media = window.matchMedia("(prefers-color-scheme: dark)");
   media.addEventListener("change", () => {
     if (state.theme === "system") {
-      applyTheme();
-      renderThemeButtons();
+      withoutThemeMotion(() => {
+        applyTheme();
+        renderThemeButtons();
+      });
     }
   });
 });`;
@@ -1118,6 +1285,7 @@ function buildHtml(data) {
   const displaySiteUrl = pageUrl ? pageUrl.replace(/\/$/, "") : "";
   const ogImageUrl = joinUrl(pageUrl, "./assets/og-image.png");
   const locale = language === "ko" ? "ko_KR" : "en_US";
+  const initialThemeScript = `(function(){try{var saved=localStorage.getItem("card-theme");var mode=(saved==="light"||saved==="dark")?saved:"system";var dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;var theme=mode==="system"?(dark?"dark":"light"):mode;var root=document.documentElement;root.dataset.theme=theme;root.style.backgroundColor=theme==="dark"?"#06101f":"#edf1f7";root.style.colorScheme=theme;}catch(e){}})();`;
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -1183,15 +1351,25 @@ function buildHtml(data) {
     <meta name="twitter:title" content="${escapeHtml(title)}">
     <meta name="twitter:description" content="${escapeHtml(description)}">
     <meta name="twitter:image" content="${escapeHtml(ogImageUrl)}">
+    <meta name="theme-color" content="#edf1f7" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#06101f" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="${language === "ko" ? "#06101f" : "#edf1f7"}" data-dynamic-theme>
     ${pageUrl ? `<link rel="canonical" href="${escapeHtml(pageUrl)}">` : ""}
     ${pageUrl ? `<meta property="og:url" content="${escapeHtml(pageUrl)}">` : ""}
+    <script>${initialThemeScript}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles.css">
     <script type="application/ld+json">${structuredDataJson}</script>
   </head>
-  <body>
+  <body data-ready="false">
+    <div class="boot" id="boot" data-visible="true" aria-live="polite" aria-busy="true">
+      <div class="boot-panel">
+        <div class="boot-spinner" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="toast" id="toast" data-visible="false" aria-live="polite" aria-atomic="true"></div>
     <main class="page">
       <section class="toolbar" aria-label="Controls">
         <div class="lang-switch" role="group" aria-label="Language">
@@ -1247,6 +1425,7 @@ async function main() {
 
   const builtLinks = [];
   for (const link of links) {
+    const descriptionConfigured = Object.prototype.hasOwnProperty.call(link, "description");
     const primaryUrl = resolveLocalizedUrl(link.url, fallbackLanguage);
     const metadata = await fetchMetadata(primaryUrl);
     const fallbacks = buildMetaFallbacks(primaryUrl);
@@ -1258,7 +1437,8 @@ async function main() {
             Object.entries(link.url).map(([key, value]) => [key, toDisplayUrl(value)])
           ),
       name: link.name || metadata?.title || fallbacks.name,
-      description: link.description || null,
+      descriptionConfigured,
+      description: descriptionConfigured ? link.description : null,
       metadataName: metadata?.title || "",
       metadataDescription: metadata?.description
         ? { [fallbackLanguage]: metadata.description, en: metadata.description, ko: metadata.description }

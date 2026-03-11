@@ -43,11 +43,13 @@ links:
     name:
       ko: "LinkedIn"
       en: "LinkedIn"
+    description: ""
 
   - url:
       ko: "https://github.com/junglesub"
     name:
       ko: "GitHub"
+    description: ""
 
   - url:
       ko: "https://compfriend.tistory.com/"
