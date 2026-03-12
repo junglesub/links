@@ -26,9 +26,9 @@ site:
   theme:
     defaultMode: dark
   skills:
-    - ReactJS
+    - React
     - HTML/CSS
-    - Spring
+    - Spring Boot
     - NestJS
     - MySQL
     - NoSQL
