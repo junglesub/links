@@ -38,6 +38,13 @@ site:
 
 links:
   - url:
+      ko: "https://junglesub.github.io/me/resume"
+    name:
+      ko: "이력서"
+      en: "Resume"
+    description: ""
+    
+  - url:
       ko: "https://www.linkedin.com/in/jungsubr/"
       en: "https://www.linkedin.com/in/jungsubr/?locale=en_US"
     name:
