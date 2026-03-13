@@ -43,6 +43,12 @@ links:
       ko: "이력서"
       en: "Resume"
     description: ""
+  - url:
+      ko: "https://jryoo.notion.site/n"
+    name:
+      ko: "포트폴리오(노션)"
+      en: "Notion Portfolio"
+    description: ""
     
   - url:
       ko: "https://www.linkedin.com/in/jungsubr/"
