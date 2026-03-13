@@ -14,6 +14,7 @@ const assetsDir = path.join(docsDir, "assets");
 const iconSvg = {
   globe: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20a10 10 0 0 0 0-20Zm7.94 9h-3.02a15.6 15.6 0 0 0-1.4-5.02A8.02 8.02 0 0 1 19.94 11ZM12 4.06c.92 1.1 1.93 3.18 2.38 5.94H9.62C10.07 7.24 11.08 5.16 12 4.06ZM8.48 5.98A15.6 15.6 0 0 0 7.08 11H4.06a8.02 8.02 0 0 1 4.42-5.02ZM4.06 13h3.02a15.6 15.6 0 0 0 1.4 5.02A8.02 8.02 0 0 1 4.06 13Zm7.94 6.94c-.92-1.1-1.93-3.18-2.38-5.94h4.76c-.45 2.76-1.46 4.84-2.38 5.94Zm3.52-1.92A15.6 15.6 0 0 0 16.92 13h3.02a8.02 8.02 0 0 1-4.42 5.02Z" fill="currentColor"/></svg>`,
   github: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.7.5 12.12c0 5.14 3.3 9.49 7.88 11.03c.58.11.79-.25.79-.57c0-.28-.01-1.2-.02-2.18c-3.2.7-3.88-1.38-3.88-1.38c-.52-1.35-1.28-1.71-1.28-1.71c-1.05-.73.08-.72.08-.72c1.16.08 1.77 1.21 1.77 1.21c1.03 1.8 2.7 1.28 3.36.98c.1-.76.4-1.28.72-1.58c-2.55-.3-5.23-1.3-5.23-5.77c0-1.28.45-2.33 1.18-3.16c-.12-.3-.51-1.5.11-3.13c0 0 .97-.32 3.19 1.21a10.9 10.9 0 0 1 5.8 0c2.21-1.53 3.18-1.21 3.18-1.21c.62 1.63.23 2.83.11 3.13c.74.83 1.18 1.88 1.18 3.16c0 4.48-2.69 5.47-5.25 5.77c.42.36.78 1.08.78 2.18c0 1.58-.01 2.85-.01 3.24c0 .32.21.69.8.57c4.57-1.55 7.86-5.89 7.86-11.03C23.5 5.7 18.35.5 12 .5Z" fill="currentColor"/></svg>`,
+  linkedin: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.43 8.98H3.88V21h2.55V8.98ZM5.15 7.33c.89 0 1.61-.74 1.61-1.66C6.76 4.74 6.04 4 5.15 4s-1.61.74-1.61 1.67c0 .92.72 1.66 1.61 1.66ZM20.45 21h-2.54v-6.16c0-1.47-.03-3.35-1.98-3.35c-1.98 0-2.28 1.6-2.28 3.24V21h-2.54V8.98h2.44v1.64h.03c.34-.66 1.17-1.93 3.01-1.93c3.21 0 3.81 2.19 3.81 5.03V21Z" fill="currentColor"/></svg>`,
   mail: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2 .47v.03l6.62 4.73a.66.66 0 0 0 .76 0L19 7.25v-.03a.75.75 0 0 0-.75-.72H5.75A.75.75 0 0 0 5 7.22Zm14 2.49-5.46 3.9a2.66 2.66 0 0 1-3.08 0L5 9.71v7.54c0 .41.34.75.75.75h12.5c.41 0 .75-.34.75-.75V9.71Z" fill="currentColor"/></svg>`,
   file: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.75A2.75 2.75 0 0 1 8.75 0h5.69c.73 0 1.43.29 1.94.8l4.82 4.82c.51.51.8 1.21.8 1.94v13.69A2.75 2.75 0 0 1 19.25 24H8.75A2.75 2.75 0 0 1 6 21.25V2.75Zm8 0V6h3.25L14 2.75ZM9 11.25c0-.41.34-.75.75-.75h4.5a.75.75 0 1 1 0 1.5h-4.5A.75.75 0 0 1 9 11.25Zm0 4c0-.41.34-.75.75-.75h7.5a.75.75 0 1 1 0 1.5h-7.5A.75.75 0 0 1 9 15.25Z" fill="currentColor"/></svg>`,
   copy: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.75 3A2.75 2.75 0 0 0 6 5.75v9.5A2.75 2.75 0 0 0 8.75 18h7.5A2.75 2.75 0 0 0 19 15.25v-9.5A2.75 2.75 0 0 0 16.25 3h-7.5Zm-4 5A2.75 2.75 0 0 0 2 10.75v9.5A2.75 2.75 0 0 0 4.75 23h7.5A2.75 2.75 0 0 0 15 20.25V20h-1.5v.25a1.25 1.25 0 0 1-1.25 1.25h-7.5A1.25 1.25 0 0 1 3.5 20.25v-9.5A1.25 1.25 0 0 1 4.75 9.5H5V8h-.25Z" fill="currentColor"/></svg>`,
@@ -189,7 +190,172 @@ function toDisplayUrl(value) {
   return normalized.replace(/\/$/, "");
 }
 
-function inferIcon(url) {
+function parseTagAttributes(tag) {
+  const attributes = {};
+  const attributeRegex = /([^\s=/>]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+)))?/g;
+  let match;
+  while ((match = attributeRegex.exec(tag))) {
+    const key = match[1]?.toLowerCase();
+    if (!key || key === "link") {
+      continue;
+    }
+    attributes[key] = match[2] ?? match[3] ?? match[4] ?? "";
+  }
+  return attributes;
+}
+
+function parseIconSize(value) {
+  const match = String(value || "").match(/(\d+)[xX](\d+)/);
+  if (!match) {
+    return 0;
+  }
+  return Number(match[1]) * Number(match[2]);
+}
+
+function scoreIconCandidate(candidate) {
+  let score = 0;
+  if (candidate.fromManifest) {
+    score += 5000;
+  }
+  if (candidate.purpose?.includes("maskable")) {
+    score += 1200;
+  }
+  if (candidate.rel?.includes("apple-touch-icon")) {
+    score += 900;
+  }
+  if (candidate.type === "image/png") {
+    score += 700;
+  }
+  if (candidate.rel?.includes("icon")) {
+    score += 400;
+  }
+  if (candidate.url.endsWith(".svg")) {
+    score += 300;
+  }
+  if (candidate.url.endsWith(".png")) {
+    score += 200;
+  }
+  score += Math.min(candidate.size || 0, 4096);
+  return score;
+}
+
+function chooseBestIconCandidate(candidates) {
+  if (!Array.isArray(candidates) || candidates.length === 0) {
+    return "";
+  }
+  return [...candidates]
+    .filter((candidate) => candidate?.url)
+    .sort((left, right) => scoreIconCandidate(right) - scoreIconCandidate(left))[0]?.url || "";
+}
+
+async function fetchUrlText(url, redirectCount = 0) {
+  if (redirectCount > 4) {
+    return null;
+  }
+
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith("https:") ? https : http;
+    const request = client.get(
+      url,
+      {
+        headers: {
+          "user-agent": "Mozilla/5.0 (compatible; CardBuilder/1.0)"
+        }
+      },
+      (response) => {
+        if (
+          response.statusCode &&
+          response.statusCode >= 300 &&
+          response.statusCode < 400 &&
+          response.headers.location
+        ) {
+          response.resume();
+          resolve(fetchUrlText(new URL(response.headers.location, url).toString(), redirectCount + 1));
+          return;
+        }
+
+        if (!response.statusCode || response.statusCode >= 400) {
+          response.resume();
+          resolve(null);
+          return;
+        }
+
+        let body = "";
+        response.setEncoding("utf8");
+        response.on("data", (chunk) => {
+          body += chunk;
+        });
+        response.on("end", () => resolve({ body, finalUrl: url }));
+      }
+    );
+
+    request.setTimeout(4500, () => {
+      request.destroy(new Error("Request timed out"));
+    });
+    request.on("error", reject);
+  });
+}
+
+async function resolveBestIconFromHtml(pageUrl, html) {
+  const linkTags = [...String(html).matchAll(/<link\b[^>]*>/gi)].map((match) => parseTagAttributes(match[0]));
+  const iconCandidates = [];
+  let manifestUrl = "";
+
+  for (const attributes of linkTags) {
+    const rel = String(attributes.rel || "").toLowerCase();
+    const href = attributes.href ? new URL(attributes.href, pageUrl).toString() : "";
+    if (!href) {
+      continue;
+    }
+
+    if (rel.includes("manifest") && !manifestUrl) {
+      manifestUrl = href;
+    }
+
+    if (!rel.includes("icon")) {
+      continue;
+    }
+
+    iconCandidates.push({
+      url: href,
+      rel,
+      type: String(attributes.type || "").toLowerCase(),
+      purpose: String(attributes.purpose || "").toLowerCase(),
+      size: parseIconSize(attributes.sizes)
+    });
+  }
+
+  if (manifestUrl) {
+    try {
+      const manifestResponse = await fetchUrlText(manifestUrl);
+      const manifestText = manifestResponse?.body || "";
+      const manifestBaseUrl = manifestResponse?.finalUrl || manifestUrl;
+      const manifest = manifestText ? JSON.parse(manifestText) : null;
+      if (Array.isArray(manifest?.icons)) {
+        for (const icon of manifest.icons) {
+          if (!icon?.src) {
+            continue;
+          }
+          iconCandidates.push({
+            url: new URL(icon.src, manifestBaseUrl).toString(),
+            rel: "manifest",
+            type: String(icon.type || "").toLowerCase(),
+            purpose: String(icon.purpose || "").toLowerCase(),
+            size: parseIconSize(icon.sizes),
+            fromManifest: true
+          });
+        }
+      }
+    } catch {}
+  }
+
+  return (
+    chooseBestIconCandidate(iconCandidates) ||
+    new URL("/favicon.ico", new URL(pageUrl).origin).toString()
+  );
+}
+
+function inferIcon(url, metadataIconUrl = "") {
   if (url.startsWith("mailto:")) {
     return { kind: "inline", value: "mail" };
   }
@@ -201,9 +367,15 @@ function inferIcon(url) {
     if (parsed.hostname === "github.com" || parsed.hostname === "www.github.com") {
       return { kind: "inline", value: "github", plain: true };
     }
+    if (parsed.hostname === "linkedin.com" || parsed.hostname === "www.linkedin.com") {
+      return {
+        kind: "image",
+        value: "https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico"
+      };
+    }
     return {
       kind: "image",
-      value: `https://www.google.com/s2/favicons?sz=64&domain_url=${encodeURIComponent(parsed.origin)}`
+      value: metadataIconUrl || new URL("/favicon.ico", parsed.origin).toString()
     };
   } catch {
     return { kind: "inline", value: "globe" };
@@ -239,47 +411,9 @@ async function fetchMetadata(url) {
   }
 
   try {
-    const html = await new Promise((resolve, reject) => {
-      const client = url.startsWith("https:") ? https : http;
-      const request = client.get(
-        url,
-        {
-          headers: {
-            "user-agent": "Mozilla/5.0 (compatible; CardBuilder/1.0)"
-          }
-        },
-        (response) => {
-          if (
-            response.statusCode &&
-            response.statusCode >= 300 &&
-            response.statusCode < 400 &&
-            response.headers.location
-          ) {
-            response.resume();
-            resolve(fetchMetadata(new URL(response.headers.location, url).toString()));
-            return;
-          }
-
-          if (!response.statusCode || response.statusCode >= 400) {
-            response.resume();
-            resolve(null);
-            return;
-          }
-
-          let body = "";
-          response.setEncoding("utf8");
-          response.on("data", (chunk) => {
-            body += chunk;
-          });
-          response.on("end", () => resolve(body));
-        }
-      );
-
-      request.setTimeout(4500, () => {
-        request.destroy(new Error("Request timed out"));
-      });
-      request.on("error", reject);
-    });
+    const pageResponse = await fetchUrlText(url);
+    const html = pageResponse?.body || "";
+    const finalUrl = pageResponse?.finalUrl || url;
 
     if (!html) {
       return null;
@@ -300,8 +434,9 @@ async function fetchMetadata(url) {
       readMeta("twitter:description") ||
       html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)?.[1]?.trim() ||
       "";
+    const iconUrl = await resolveBestIconFromHtml(finalUrl, html);
 
-    return title || description ? { title, description } : null;
+    return title || description || iconUrl ? { title, description, iconUrl } : null;
   } catch {
     return null;
   }
@@ -1294,7 +1429,10 @@ function buildHtml(data) {
   const description = pickLocalized(data.site.intro, language, data.fallbackLanguage);
   const pageUrl = data.siteUrl || "";
   const displaySiteUrl = pageUrl ? pageUrl.replace(/\/$/, "") : "";
-  const ogImageUrl = joinUrl(pageUrl, "./assets/og-image.png");
+  const ogImagePath = data.assetPaths?.ogImage || "./assets/og-image.png";
+  const stylesheetPath = data.assetPaths?.styles || "./assets/styles.css";
+  const appScriptPath = data.assetPaths?.app || "./assets/app.js";
+  const ogImageUrl = joinUrl(pageUrl, ogImagePath);
   const locale = language === "ko" ? "ko_KR" : "en_US";
   const initialThemeScript = `(function(){try{var saved=localStorage.getItem("card-theme");var mode=(saved==="light"||saved==="dark")?saved:"system";var dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;var theme=mode==="system"?(dark?"dark":"light"):mode;var root=document.documentElement;root.dataset.theme=theme;root.style.backgroundColor=theme==="dark"?"#06101f":"#edf1f7";root.style.colorScheme=theme;}catch(e){}})();`;
   const structuredData = {
@@ -1371,7 +1509,7 @@ function buildHtml(data) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="${escapeHtml(stylesheetPath)}">
     <script type="application/ld+json">${structuredDataJson}</script>
   </head>
   <body data-ready="false">
@@ -1423,7 +1561,7 @@ function buildHtml(data) {
         </div>
       </footer>
     </main>
-    <script type="module" src="./assets/app.js"></script>
+    <script type="module" src="${escapeHtml(appScriptPath)}"></script>
   </body>
 </html>`;
 }
@@ -1458,7 +1596,7 @@ async function main() {
       fallbackDescription: fallbacks.description,
       icon: typeof link.icon === "string"
         ? { kind: "inline", value: link.icon }
-        : inferIcon(primaryUrl)
+        : inferIcon(primaryUrl, metadata?.iconUrl || "")
     });
   }
 
@@ -1475,15 +1613,26 @@ async function main() {
 
   const css = buildCss();
   const appJs = buildClientScript(buildData);
-  const html = buildHtml(buildData);
   const ogImageSvg = buildOgImageSvg(buildData);
   const ogImagePng = await sharp(Buffer.from(ogImageSvg)).png().toBuffer();
+  const stylesHash = createHash("sha256").update(css).digest("hex").slice(0, 12);
+  const appHash = createHash("sha256").update(appJs).digest("hex").slice(0, 12);
+  const ogImageHash = createHash("sha256").update(ogImagePng).digest("hex").slice(0, 12);
 
+  buildData.assetPaths = {
+    styles: `./assets/styles.${stylesHash}.css`,
+    app: `./assets/app.${appHash}.js`,
+    ogImage: `./assets/og-image.${ogImageHash}.png`
+  };
+
+  const html = buildHtml(buildData);
+
+  await fs.rm(assetsDir, { recursive: true, force: true });
   await fs.mkdir(assetsDir, { recursive: true });
-  await fs.writeFile(path.join(assetsDir, "styles.css"), css, "utf8");
-  await fs.writeFile(path.join(assetsDir, "app.js"), appJs, "utf8");
+  await fs.writeFile(path.join(assetsDir, `styles.${stylesHash}.css`), css, "utf8");
+  await fs.writeFile(path.join(assetsDir, `app.${appHash}.js`), appJs, "utf8");
   await fs.writeFile(path.join(assetsDir, "og-image.svg"), ogImageSvg, "utf8");
-  await fs.writeFile(path.join(assetsDir, "og-image.png"), ogImagePng);
+  await fs.writeFile(path.join(assetsDir, `og-image.${ogImageHash}.png`), ogImagePng);
   await fs.writeFile(path.join(docsDir, "index.html"), html, "utf8");
   await fs.writeFile(
     path.join(docsDir, ".nojekyll"),
