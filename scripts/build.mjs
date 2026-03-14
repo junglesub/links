@@ -1432,7 +1432,11 @@ function buildHtml(data) {
   const ogImagePath = data.assetPaths?.ogImage || "./assets/og-image.png";
   const stylesheetPath = data.assetPaths?.styles || "./assets/styles.css";
   const appScriptPath = data.assetPaths?.app || "./assets/app.js";
-  const ogImageUrl = joinUrl(pageUrl, ogImagePath);
+  const ogImageVersion = data.assetVersions?.ogImage || "";
+  const ogImageUrl = joinUrl(
+    pageUrl,
+    `${ogImagePath}${ogImageVersion ? `?v=${ogImageVersion}` : ""}`
+  );
   const locale = language === "ko" ? "ko_KR" : "en_US";
   const initialThemeScript = `(function(){try{var saved=localStorage.getItem("card-theme");var mode=(saved==="light"||saved==="dark")?saved:"system";var dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;var theme=mode==="system"?(dark?"dark":"light"):mode;var root=document.documentElement;root.dataset.theme=theme;root.style.backgroundColor=theme==="dark"?"#06101f":"#edf1f7";root.style.colorScheme=theme;}catch(e){}})();`;
   const structuredData = {
@@ -1622,7 +1626,10 @@ async function main() {
   buildData.assetPaths = {
     styles: `./assets/styles.${stylesHash}.css`,
     app: `./assets/app.${appHash}.js`,
-    ogImage: `./assets/og-image.${ogImageHash}.png`
+    ogImage: "./assets/og-image.png"
+  };
+  buildData.assetVersions = {
+    ogImage: ogImageHash
   };
 
   const html = buildHtml(buildData);
@@ -1632,7 +1639,7 @@ async function main() {
   await fs.writeFile(path.join(assetsDir, `styles.${stylesHash}.css`), css, "utf8");
   await fs.writeFile(path.join(assetsDir, `app.${appHash}.js`), appJs, "utf8");
   await fs.writeFile(path.join(assetsDir, "og-image.svg"), ogImageSvg, "utf8");
-  await fs.writeFile(path.join(assetsDir, `og-image.${ogImageHash}.png`), ogImagePng);
+  await fs.writeFile(path.join(assetsDir, "og-image.png"), ogImagePng);
   await fs.writeFile(path.join(docsDir, "index.html"), html, "utf8");
   await fs.writeFile(
     path.join(docsDir, ".nojekyll"),
